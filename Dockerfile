@@ -1,6 +1,11 @@
-FROM alpine:3.14
+FROM ubuntu:latest
 
-RUN apk update && apk add --no-cache bash ruby-irb nodejs npm \
+ARG DEBIAN_FRONTEND=noninteractive
+ENV TZ=UTC
+
+RUN apt-get update \
+  && apt-get install -y ruby nodejs npm \
+  && rm -rf /var/lib/apt/lists/* \
   && gem install --no-document image_optim image_optim_pack \
   && npm -g install svgo
 
