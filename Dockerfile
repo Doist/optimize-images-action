@@ -4,7 +4,6 @@ RUN apk update && apk add --no-cache bash ruby-irb nodejs npm \
   && gem install --no-document image_optim image_optim_pack \
   && npm -g install svgo
 
-COPY ./optimize.rb /
-COPY ./entrypoint.sh /
+COPY ./optimize.rb /optimize.rb
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/optimize.rb"]

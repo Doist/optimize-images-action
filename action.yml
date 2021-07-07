@@ -1,0 +1,23 @@
+name: 'Optimize images'
+description: 'Lossless image optimization'
+
+inputs:
+  input:
+    description: 'Colon-delimited list of files and directories to process'
+    required: true
+    default: '**/*'
+  ignore:
+    description: 'Colon-delimited list of files and directories to ignore'
+    required: true
+    default: ''
+
+outputs:
+  summary:
+    description: 'Summary of changes in a Markdown table format'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    INPUT: ${{ inputs.input }}
+    IGNORE: ${{ inputs.ignore }}
