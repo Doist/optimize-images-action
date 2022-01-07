@@ -29,10 +29,10 @@ ignore = ENV["IGNORE"].split(File::PATH_SEPARATOR).flat_map { |path| expand(path
 
 # Setup ImageOptim options.
 image_optim = ImageOptim.new(
-  :advpng => {
-    :level => 3
-  },
-  :pngout => false,
+  :advpng => false, # redundant with oxipng
+  :pngcrush => false, # redundant with oxipng
+  :pngout => false, # redundant with oxipng
+  :optipng => false, # redundant with oxipng
   :svgo => {
     :enable_plugins => %w[
         cleanupAttrs cleanupListOfValues cleanupNumericValues convertColors convertStyleToAttrs
