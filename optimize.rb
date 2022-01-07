@@ -33,6 +33,8 @@ image_optim = ImageOptim.new(
   :pngcrush => false, # redundant with oxipng
   :pngout => false, # redundant with oxipng
   :optipng => false, # redundant with oxipng
+  :jpegoptim => false, # redundant with jpegrecompress
+  :jpegtran => false, # redundant with jpegrecompress
   :svgo => {
     :enable_plugins => %w[
         cleanupAttrs cleanupListOfValues cleanupNumericValues convertColors convertStyleToAttrs
