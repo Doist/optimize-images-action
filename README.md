@@ -5,7 +5,7 @@ GitHub Action that applies lossless image optimization.
 ## Usage
 
 ```yaml
-- uses: doist/optimize-images-action
+- uses: doist/optimize-images-action@v2
   with:
     # Colon-delimited list of files and directories to process, e.g., "assets".
     input: "**/*"
@@ -39,7 +39,7 @@ jobs:
       - uses: actions/checkout@v2 
       - name: Optimize images
         id: optimize-images
-        uses: Doist/optimize-images-action@v1
+        uses: Doist/optimize-images-action@v2
       - name: Create pull request
         uses: peter-evans/create-pull-request@v3
         with:
@@ -69,7 +69,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2 
       - name: Optimize images
-        uses: Doist/optimize-images-action@v1
+        uses: Doist/optimize-images-action@v2
       - name: Commit
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
