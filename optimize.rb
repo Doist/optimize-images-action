@@ -79,7 +79,7 @@ if results.size > 2
   # Escape %, \n, and \r.
   # Ref: https://github.community/t/set-output-truncates-multiline-strings/16852/3
   summary.gsub!(/[%\n\r]/, "%" => "%25", "\n" => "%0A", "\r" => "%0D")
-  puts "::set-output name=summary::#{summary}"
+  puts "echo ':name=summary::#{summary}' >> $GITHUB_OUTPUT"
 else
   puts "Nothing to optimize"
 end
